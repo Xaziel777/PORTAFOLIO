@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>David Paz | Portfolio</title>
+    <meta name="description" content="Portafolio de David Paz — soluciones de ingeniería a través de programación (C++, Python), electrónica y diseño 3D (SolidWorks)." />
+    <link rel="canonical" href="https://xazielcoorporation.netlify.app/" />
+    <meta property="og:title" content="David Paz | Portfolio" />
+    <meta property="og:description" content="Soluciones de ingeniería a través de automatización, programación y diseño de sistemas integrados." />
+    <meta property="og:url" content="https://xazielcoorporation.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <link href="./dist/output.css" rel="stylesheet" />
   </head>
@@ -28,21 +35,36 @@
       <nav
         class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
       >
-        <h1 class="text-2xl font-bold tracking-wide">XAZIEL</h1>
+        <a href="index.html" class="text-2xl font-bold tracking-wide">XAZIEL</a>
 
         <ul class="hidden md:flex gap-8 text-zinc-300">
-          <li><a href="#" class="hover:text-white transition">Home</a></li>
-          <li><a href="#" class="hover:text-white transition">Projects</a></li>
-          <li><a href="#" class="hover:text-white transition">Services</a></li>
-          <li><a href="#" class="hover:text-white transition">Contact</a></li>
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="projects.html" class="hover:text-white transition">Projects</a></li>
+          <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
         </ul>
 
-        <button
-          class="bg-white text-black px-5 py-2 rounded-full font-medium hover:scale-105 transition duration-300"
+        <a
+          href="contact.html"
+          class="hidden md:inline-block bg-white text-black px-5 py-2 rounded-full font-medium hover:scale-105 transition duration-300"
         >
           Let's Talk
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-white" aria-label="Abrir menú" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </nav>
+
+      <div id="mobile-menu" class="hidden md:hidden flex-col gap-1 px-6 pb-6 text-zinc-300 border-t border-zinc-800">
+        <a href="index.html" class="block py-2 hover:text-white transition">Home</a>
+        <a href="projects.html" class="block py-2 hover:text-white transition">Projects</a>
+        <a href="services.html" class="block py-2 hover:text-white transition">Services</a>
+        <a href="contact.html" class="block py-2 hover:text-white transition">Contact</a>
+        <a href="contact.html" class="block mt-3 bg-white text-black text-center px-5 py-2 rounded-full font-medium">Let's Talk</a>
+      </div>
     </header>
 
     <!-- HERO -->
@@ -91,114 +113,76 @@
         </p>
 
         <div class="flex justify-center gap-4">
-          <button
+          <a
+            href="projects.html"
             class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:scale-105 transition duration-300"
           >
             View Projects
-          </button>
+          </a>
 
-          <button
+          <a
+            href="contact.html"
             class="border border-zinc-700 px-8 py-3 rounded-full hover:bg-zinc-900 transition duration-300"
           >
             Contact Me
-          </button>
+          </a>
         </div>
       </div>
     </section>
-    <!-- ABOUT SECTION -->
+
+    <!-- QUICK LINKS -->
     <section class="py-32 px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="mb-16">
-          <p class="uppercase tracking-[0.3em] text-zinc-500 mb-4">About Me</p>
-
-          <h2 class="text-4xl md:text-6xl font-bold mb-6">
-            Engineering Creativity
-            <span class="text-zinc-500">+ Technical Vision</span>
-          </h2>
-
-          <p class="text-zinc-400 max-w-3xl text-lg leading-relaxed">
-            I develop engineering-oriented digital and automation solutions,
-            combining programming, system design, electronics and technical
-            creativity to build projects with real-world functionality and
-            futuristic aesthetics.
-          </p>
-        </div>
-
-        <!-- CARDS -->
         <div class="grid md:grid-cols-3 gap-6">
-          <!-- CARD 1 -->
-          <div
-            class="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300"
+          <a
+            href="about.html"
+            class="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300 block"
           >
-            <h3 class="text-2xl font-bold mb-4">Programming</h3>
-
+            <h3 class="text-2xl font-bold mb-4">About</h3>
             <p class="text-zinc-400 mb-6">
-              Development of software solutions using C++, Python and
-              logic-oriented systems.
+              Programación, diseño 3D y electrónica combinados en soluciones
+              con funcionalidad real.
             </p>
+            <span class="text-sm font-semibold group-hover:text-zinc-300 transition">Conóceme →</span>
+          </a>
 
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >C++</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >Python</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >Automation</span
-              >
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div
-            class="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300"
+          <a
+            href="projects.html"
+            class="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300 block"
           >
-            <h3 class="text-2xl font-bold mb-4">3D Design</h3>
-
+            <h3 class="text-2xl font-bold mb-4">Projects</h3>
             <p class="text-zinc-400 mb-6">
-              Mechanical modeling, technical design and digital prototyping for
-              integrated systems.
+              Una selección de proyectos de ingeniería, automatización y
+              diseño técnico.
             </p>
+            <span class="text-sm font-semibold group-hover:text-zinc-300 transition">Ver proyectos →</span>
+          </a>
 
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >SOLIDWORKS</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >AutoCAD</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >3D Modeling</span
-              >
-            </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div
-            class="bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300"
+          <a
+            href="services.html"
+            class="group bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 hover:translate-y-[-8px] hover:border-purple-500/30 hover:bg-white/10 transition duration-300 block"
           >
-            <h3 class="text-2xl font-bold mb-4">Electronics</h3>
-
+            <h3 class="text-2xl font-bold mb-4">Services</h3>
             <p class="text-zinc-400 mb-6">
-              Design of electronic diagrams, automation systems and integrated
-              technical solutions.
+              Programación, electrónica y diseño mecánico de punta a punta.
             </p>
-
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >Proteus</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >Circuits</span
-              >
-              <span class="bg-white/10 px-3 py-1 rounded-full text-sm"
-                >Systems</span
-              >
-            </div>
-          </div>
+            <span class="text-sm font-semibold group-hover:text-zinc-300 transition">Ver servicios →</span>
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800 py-10 px-6 text-zinc-500 text-sm">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p>© 2026 David Paz — XAZIEL</p>
+        <div class="flex gap-6">
+          <a href="mailto:xazielcoorporation@gmail.com" class="hover:text-white transition">Email</a>
+          <a href="https://github.com/Xaziel777" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js" defer></script>
   </body>
 </html>

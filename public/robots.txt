@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xazielcoorporation.netlify.app/sitemap.xml
