@@ -44,31 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---------- SCROLL REVEAL ---------- */
+  /* ---------- SCROLL REVEAL ----------
+     IMPORTANTE: el contenido es visible por defecto en el HTML/CSS.
+     Solo AQUÍ, si este script corre correctamente, lo ocultamos
+     temporalmente para animarlo. Si el JS fallara por cualquier
+     motivo (caché vieja, error, bloqueo), el contenido NUNCA se
+     queda invisible. */
   const revealEls = document.querySelectorAll('.reveal');
 
-  if (!revealEls.length) return;
-
-  if (prefersReducedMotion) {
+  if (revealEls.length && !prefersReducedMotion) {
     revealEls.forEach((el) => {
-      el.classList.remove('opacity-0', 'translate-y-8');
-      el.classList.add('opacity-100', 'translate-y-0');
+      el.classList.add(
+        'opacity-0',
+        'translate-y-8',
+        'transition-all',
+        'duration-700',
+        'ease-out'
+      );
     });
-    return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
   }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0', 'translate-y-8');
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  revealEls.forEach((el) => observer.observe(el));
 });
